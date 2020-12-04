@@ -1,0 +1,24 @@
+#!/bin/bash
+
+touch /scratch/andoria/a/huang712/Run_parallel/Michael/running/running_DD_HH_SSSS
+
+hostname
+date
+
+pushd /scratch/andoria/a/huang712/VAM_Michael
+#if [ "$HOSTNAME" == "andoria.ecn.purdue.edu" ] 
+#then
+#   bash -l	
+#    module load matlab
+#fi
+matlab -nojvm -nodisplay -nosplash -r "main_date(2018,10,1d,1h,1s);exit"
+
+popd
+
+rm -f /scratch/andoria/a/huang712/Run_parallel/Michael/running/running_DD_HH_SSSS
+
+date
+
+rm -f /scratch/andoria/a/huang712/Run_parallel/Michael/running/running_DD_HH_SSSS
+touch /scratch/andoria/a/huang712/Run_parallel/Michael/finished/finished_DD_HH_SSSS
+rm -f /scratch/andoria/a/huang712/Run_parallel/Michael/jobfiles/jobfile_DD_HH_SSSS
